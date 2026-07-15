@@ -1,0 +1,533 @@
+/* ==========================================================
+   PALETA DE CORES (WeeUp)
+   ========================================================== */
+
+:root {
+
+  /* Cores institucionais */
+  --verde: #15f5ba;
+  --azul: #4f3cc2;
+  --azul-escuro: #3b2d91;
+
+  /* Tons auxiliares */
+  --verde-claro: #e9fff8;
+  --azul-claro: #f1efff;
+
+  /* Interface */
+  --texto: #23303b;
+  --cinza: #6f7782;
+  --borda: #dde3e8;
+  --fundo: #f7f8fb;
+
+}
+
+/* ==========================================================
+
+   2. CONFIGURAÇÕES GERAIS
+
+   Reset, tipografia e comportamento padrão da página
+
+   ========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family:
+    "Raleway", "Segoe UI", Calibri, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+a {
+  color: var(--azul);
+}
+
+/* ==========================================================
+
+   3. BARRA SUPERIOR (HEADER)
+
+   ========================================================== */
+
+#topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  z-index: 50;
+  background: var(--azul-escuro);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+#topbar .brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+}
+#topbar .brand img {
+  height: 09vh;
+  width: auto;
+  display: block;
+}
+#topbar .sub {
+  margin-left: 14px;
+  font-size: 12.5px;
+  opacity: 0.82;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  padding-left: 14px;
+}
+#topbar .spacer {
+  flex: 1;
+}
+#menu-btn {
+  display: none;
+  background: rgba(255, 255, 255, 0.15);
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* ==========================================================
+
+   4. LAYOUT PRINCIPAL
+
+   Sidebar + Conteúdo
+
+   ========================================================== */
+
+#wrap {
+  display: flex;
+  padding-top: 56px;
+}
+#sidebar {
+  width: 340px;
+  flex: none;
+  height: calc(100vh - 56px);
+  position: sticky;
+  top: 56px;
+  overflow-y: auto;
+  background: #fff;
+  border-right: 1px solid var(--borda);
+  padding: 14px 6px 60px;
+}
+#sidebar a:hover{
+    background: var(--azul-claro);
+}
+#sidebar a:active{
+    background: var(--azul);
+    color: #fff;
+}
+#content {
+  flex: 1;
+  min-width: 0;
+  padding: 34px 50px 120px;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+/* ==========================================================
+
+   5. MENU LATERAL (SUMÁRIO)
+
+   ========================================================== */
+
+.toc-search {
+  width: calc(100% - 20px);
+  margin: 4px 10px 12px;
+  padding: 8px 11px;
+  border: 1px solid var(--borda);
+  border-radius: 7px;
+  font-size: 13px;
+}
+.toc-search:focus {
+  outline: 2px solid var(--azul);
+  border-color: var(--azul);
+}
+#sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#sidebar a {
+  display: block;
+  text-decoration: none;
+  color: var(--texto);
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.toc-1 > a {
+  font-weight: 700;
+  color: var(--azul);
+  margin-top: 6px;
+}
+.toc-sub {
+  margin-left: 4px;
+  border-left: 2px solid var(--azul-claro);
+  padding-left: 4px;
+}
+.toc-2 > a {
+  font-weight: 600;
+}
+.toc-3 a {
+  font-size: 12.3px;
+  color: var(--cinza);
+}
+.toc-3 a:before {
+  content: "▸ ";
+  color: var(--verde);
+}
+
+/* ==========================================================
+
+   6. CAPA DO DOCUMENTO
+
+   ========================================================== */
+
+#cover {
+  background: linear-gradient(135deg, var(--azul)0%, var(--azul-escuro) 100%);
+  color: #fff;
+  border-radius: 14px;
+  padding: 46px 40px;
+  margin-bottom: 36px;
+  text-align: center;
+  box-shadow: 0 8px 26px rgba(11, 44, 68, 0.35);
+}
+#cover .grp {
+  color: var(--verde);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+#cover .ef {
+  opacity: 0.8;
+  font-size: 15px;
+  margin-top: 6px;
+}
+#cover h1.title {
+  font-size: 32px;
+  line-height: 1.25;
+  margin: 18px 0 14px;
+  color: #fff;
+  border: 0;
+  padding: 0;
+}
+#cover .ver {
+  display: inline-block;
+  background: var(--verde);
+  color: var(--azul-escuro);
+  font-weight: 700;
+  padding: 7px 20px;
+  border-radius: 30px;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+#cover .meta {
+  opacity: 0.82;
+  font-size: 13.5px;
+  margin: 3px 0;
+}
+
+/* ==========================================================
+
+   7. TÍTULOS E HIERARQUIA
+
+   ========================================================== */
+
+h1.doc-h1 {
+  font-size: 25px;
+  color: var(--azul);
+  border-bottom: 3px solid var(--verde);
+  padding-bottom: 7px;
+  margin: 46px 0 18px;
+}
+h2.doc-h2 {
+  font-size: 20px;
+  color: var(--azul);
+  margin: 34px 0 12px;
+  padding-left: 12px;
+  border-left: 5px solid var(--verde);
+}
+h3.doc-h3 {
+  font-size: 16.5px;
+  margin: 26px 0 10px;
+  color: var(--azul);
+}
+h3.h-func {
+  color: #fff;
+  background: linear-gradient(95deg, var(--azul), var(--azul-escuro));
+  padding: 11px 16px;
+  border-radius: 9px 9px 0 0;
+  font-size: 17px;
+  margin-bottom: 0;
+}
+h1[id],
+h2[id],
+h3[id] {
+  scroll-margin-top: 72px;
+}
+
+/* ==========================================================
+
+   8. BLOCOS DE CONTEÚDO
+
+   ========================================================== */
+
+.dblock {
+  border-left: 3px solid var(--azul-claro);
+  padding: 2px 0 2px 15px;
+  margin: 9px 0;
+}
+.dblock-h {
+  font-weight: 700;
+  color: var(--azul);
+  font-size: 13.5px;
+  margin: 6px 0 3px;
+}
+.func-body {
+  background: var(--azul-claro);
+  border: 1px solid #d4dbf0;
+  border-top: 0;
+  border-radius: 0 0 9px 9px;
+  padding: 13px 16px 4px;
+  margin: 0 0 24px;
+}
+#content p {
+  margin: 7px 0;
+}
+#content ul,
+#content ol {
+  margin: 7px 0 12px;
+  padding-left: 26px;
+}
+#content li {
+  margin: 3px 0;
+}
+.callout {
+  background: var(--verde-claro);
+  border: 1px solid var(--verde);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 14px 0;
+  font-size: 13.8px;
+}
+.callout-h {
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-bottom: 4px;
+}
+.footnote {
+  font-size: 12px;
+  color: var(--cinza);
+  text-align: center;
+  margin-top: 60px;
+  border-top: 1px solid var(--borda);
+  padding-top: 14px;
+}
+
+/* ==========================================================
+
+   9. TABELAS
+
+   ========================================================== */
+
+.tbl-wrap {
+  overflow-x: auto;
+  margin: 14px 0 22px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+}
+th {
+  background: var(--azul);
+  color: #fff;
+  text-align: left;
+  padding: 9px 11px;
+  font-size: 12.5px;
+}
+td {
+  border: 1px solid var(--borda);
+  padding: 7px 11px;
+  vertical-align: top;
+}
+tr:nth-child(even) td {
+  background: #f8f9fc;
+}
+td.rid-cell {
+  font-weight: 700;
+  color: var(--azul);
+  white-space: nowrap;
+}
+
+/* ==========================================================
+
+   10. COMPONENTES
+
+   Estatísticas, diagramas e botão flutuante
+
+   ========================================================== */
+
+.statbar {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 0 0 20px;
+}
+.stat {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 11px 18px;
+  flex: 1;
+  min-width: 130px;
+  text-align: center;
+}
+.stat .num {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--azul);
+}
+.stat .lab {
+  font-size: 11.5px;
+  color: var(--cinza);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.diagram {
+  margin: 14px 0 24px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 16px;
+}
+.diagram img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.diagram .cap {
+  font-size: 12.5px;
+  color: var(--cinza);
+  margin-top: 10px;
+  font-style: italic;
+}
+#totop {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: var(--azul-escuro);
+  color: #fff;
+  border: 2px solid var(--verde);
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 16px 30px -18px rgba(11, 44, 68, 0.75);
+  z-index: 40;
+  transition: transform 0.22s ease;
+}
+#totop.show {
+  display: block;
+}
+#totop:hover {
+  transform: translateY(-2px);
+}
+/* ==========================================================
+
+   11. RESPONSIVIDADE
+
+   ========================================================== */
+
+@media (max-width: 900px) {
+  #sidebar {
+    position: fixed;
+    left: 0;
+    top: 56px;
+    z-index: 45;
+    transform: translateX(-100%);
+    transition: transform 0.2s;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-width: 86vw;
+  }
+  #sidebar.open {
+    transform: translateX(0);
+  }
+  #menu-btn {
+    display: block;
+    margin-right: 10px;
+  }
+  #content {
+    padding: 24px 18px 120px;
+  }
+  #topbar {
+    padding: 0 12px;
+  }
+  #topbar .sub {
+    font-size: 11px;
+    margin-left: 9px;
+    padding-left: 9px;
+  }
+  #topbar .sub.hide-sm {
+    display: none;
+  }
+}
+
+/* ==========================================================
+
+   12. IMPRESSÃO
+
+   Ajustes para exportação em PDF ou impressão
+
+   ========================================================== */
+
+@media print {
+  #topbar,
+  #sidebar,
+  #totop,
+  #menu-btn {
+    display: none !important;
+  }
+  #wrap {
+    padding-top: 0;
+  }
+  #content {
+    max-width: 100%;
+    padding: 0;
+  }
+  .tbl-wrap {
+    overflow: visible;
+  }
+  h1.doc-h1 {
+    page-break-after: avoid;
+  }
+  h3.h-func {
+    page-break-after: avoid;
+  }
+}

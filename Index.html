@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Especificação Funcional · Gestão XML RM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./Style.css">
+<script src="./Script.js"></script>
+</head>
+<body>
+<div id="topbar">
+  <button id="menu-btn" aria-label="Menu">&#9776;</button>
+  <span class="brand" title="WeeUp">
+    <img src="./Assets/img/Logo WeeUp.png" alt="WeeUp">
+  </span>
+  <span class="sub">Especificação Funcional · Gestão XML RM</span>
+  <span class="spacer"></span>
+  <span class="sub hide-sm">v1.0 · 22/04/2026</span>
+</div>
+<div id="wrap">
+  <nav id="sidebar">
+    <input id="toc-search" class="toc-search" type="search"
+           placeholder="Buscar no índice...">
+    <ul class="toc-root">
+<li class="toc-1"><a href="#sec-1" title="1. Introdução">1. Introdução</a>
+<ul class="toc-sub">
+<li class="toc-2"><a href="#sec-1-1" title="1.1 Sobre o Grupo Gestão XML">1.1 Sobre o Gestão XML</a></li>
+<li class="toc-2"><a href="#sec-1-2" title="1.2 Objetivo do Produto">1.2 Sobre a aplicação no ERP TOTVS RM</a></li>
+</ul>
+</li>
+<li class="toc-1"><a href="#sec-2" title="2. AS IS — Processo Atual de Compras (Agro/Porto)">2. AS IS — Processo Atual de Entrada de Nota</a>
+<ul class="toc-sub">
+<li class="toc-2"><a href="#sec-2-1" title="2.1 Visão Geral do Processo">2.1 Visão Geral do Processo</a></li>
+<li class="toc-2"><a href="#sec-2-2" title="2.2 Estrutura Organizacional e Papéis">2.2 Estrutura Organizacional e Papéis</a></li>
+<li class="toc-2"><a href="#sec-2-3" title="2.3 Fluxo Detalhado - Cenário Atual (AS IS)">2.3 Fluxo Detalhado - Cenário Atual (AS IS)</a></li>
+<li class="toc-2"><a href="#sec-2-4" title="2.4 Problemas e Dores Identificadas">2.4 Problemas e Dores Identificadas</a></li>
+<li class="toc-2"><a href="#sec-2-5" title="2.5 Análise do Cenário Atual e Considerações">2.5 Análise do Cenário Atual e Considerações</a></li>
+</ul>
+</li>
+<li class="toc-1"><a href="#sec-3" title="3. TO BE — Processo Proposto de Melhoria">3. TO BE — Processo Proposto de Melhoria</a>
+<!-- <ul class="toc-sub">
+<li class="toc-2"><a href="#sec-3-1" title="3.1 Visão Geral do Processo Futuro">3.1 Visão Geral do Processo Futuro</a></li>
+<li class="toc-2"><a href="#sec-3-2" title="3.2 Modelo Híbrido de Operação">3.2 Modelo Híbrido de Operação</a></li>
+<li class="toc-2"><a href="#sec-3-3" title="3.3 Fluxo Proposto — Compras Operacionais">3.3 Fluxo Proposto — Compras Operacionais</a></li>
+<li class="toc-2"><a href="#sec-3-4" title="3.4 Diagrama do Fluxo Futuro (TO BE)">3.4 Diagrama do Fluxo Futuro (TO BE)</a></li>
+<li class="toc-2"><a href="#sec-3-5" title="3.5 Ajustes Importantes no Processo">3.5 Ajustes Importantes no Processo</a></li>
+<li class="toc-2"><a href="#sec-3-6" title="3.6 Controle de Estoque">3.6 Controle de Estoque</a></li>
+<li class="toc-2"><a href="#sec-3-7" title="3.7 Entrada de Nota Fiscal">3.7 Entrada de Nota Fiscal</a></li>
+<li class="toc-2"><a href="#sec-3-8" title="3.8 Processo Financeiro">3.8 Processo Financeiro</a></li>
+<li class="toc-2"><a href="#sec-3-9" title="3.9 Rotinas do Protheus que Serão Implementadas">3.9 Rotinas do Protheus que Serão Implementadas</a><ul class="toc-3">
+<li><a href="#rot-1" title="Solicitação de Compras">Solicitação de Compras</a></li>
+<li><a href="#rot-2" title="Cotação">Cotação</a></li>
+<li><a href="#rot-3" title="Pedido de Compra">Pedido de Compra</a></li>
+<li><a href="#rot-4" title="Alçadas de Aprovação de Compras">Alçadas de Aprovação de Compras</a></li>
+<li><a href="#rot-5" title="Conferência Física">Conferência Física</a></li>
+<li><a href="#rot-6" title="Nota Fiscal de Entrada">Nota Fiscal de Entrada</a></li>
+</ul></li>
+<li class="toc-2"><a href="#sec-3-10" title="3.10 Principais Ganhos">3.10 Principais Ganhos</a></li>
+<li class="toc-2"><a href="#sec-3-11" title="3.11 Considerações Finais (TO BE)">3.11 Considerações Finais (TO BE)</a></li>
+</ul>
+</li>
+<li class="toc-1"><a href="#sec-4" title="4. Assinaturas de Aprovação">4. Assinaturas de Aprovação</a>
+</li>
+</ul> -->
+  </nav>
+  <main id="content">
+    <div id="cover">
+<div class="grp">Gestão XML RM</div>
+<div class="ef">Especificação Funcional</div>
+<h1 class="title">Mapeamento do Processo do <br>Recebimento Fiscal</h1>
+<div class="ver">Versão 1.0</div>
+<div class="meta">Produto: <Strong>Gestão XML</Strong></div>
+<div class="meta">Status: <strong>Em Desenvolvimento</strong></div>
+</div>
+<div class="statbar">
+<div class="stat"><div class="num">6</div><div class="lab">Etapas de Processo Mapeadas</div></div>
+<div class="stat"><div class="num">3</div><div class="lab">Perfis Envolvidos</div></div>
+<div class="stat"><div class="num">7</div><div class="lab">Dores Identificadas no <br>AS IS</div></div>
+<div class="stat"><div class="num">2</div><div class="lab">Automações</div></div>
+</div>
+
+<h1 id="sec-1" class="doc-h1">1. Introdução</h1>
+<h2 id="sec-1-1" class="doc-h2">1.1 Sobre o Gestão XML</h2>
+<p>O Gestão XML Protheus é uma solução especializada na automação e governança do 
+processo de escrituração fiscal dentro do ERP do cliente. A plataforma é responsável 
+por interpretar documentos fiscais, aplicar regras de negócio previamente definidas e 
+realizar o tratamento automatizado das informações, reduzindo atividades 
+operacionais e aumentando a confiabilidade dos lançamentos. 
+Por meio de uma estrutura altamente parametrizável, a solução permite adaptar o 
+processamento fiscal às particularidades de cada organização, atendendo diferentes 
+segmentos de mercado, legislações e processos internos. Atualmente, o produto conta 
+com mais de 300 parâmetros configuráveis para suportar regras fiscais, tributárias e 
+operacionais específicas de cada cliente. 
+Além da automação da escrituração, a plataforma fornece mecanismos de validação, 
+controle e acompanhamento dos processos, contribuindo para maior segurança fiscal e 
+conformidade regulatória.</p>
+<p>A solução atende empresas que buscam automatizar e fortalecer seus processos 
+fiscais, especialmente em cenários com: Alto volume de documentos fiscais,Operações distribuídas 
+entre múltiplas filiais, Regras tributárias complexas, Necessidade de controles específicos por fornecedor 
+ou unidade de negócio,Exigências rigorosas de compliance fiscal e Busca por redução de atividades manuais e retrabalho</p>
+<h2 id="sec-1-2" class="doc-h2"> Sobre a aplicação no ERP TOTVS RM</h2>
+<p>O Gestão XML RM é uma solução voltada para a automação do processo de escrituração fiscal no ERP TOTVS RM, responsável 
+  pela interpretação, validação e lançamento estruturado de documentos fiscais. A plataforma utiliza um movimento intermediário 
+  de Pré-Nota para vincular o documento eletrônico à Ordem de Compra, garantindo rastreabilidade ao processo. O produto encontra-se
+   em evolução, com aprimoramentos sendo implementados para expandir sua parametrização e governança.
+</p>
+<p>Este documento tem como finalidade apresentar o cenário atual (AS IS) dos processos estabelecidos no Gestão XML RM, identificar os
+   principais gaps, dificuldades e oportunidades de melhoria, bem como definir o modelo futuro (TO BE) alinhada às capacidades já consolidadas
+    no Gestão XML Protheus. O material servirá como referência técnica para orientar o planejamento e a evolução do produto RM.</p>
+<h1 id="sec-2" class="doc-h1">2. AS IS — Processo Atual de Entrada de Nota Fiscal no RM
+
+</h1>
+<h2 id="sec-2-1" class="doc-h2">2.1 Visão Geral do Processo</h2>
+<p>
+  O processo de entrada de notas fiscais no Gestão XML RM atualmente trabalha apenas com o recebimento de NFSe e NFe, o fluxo é iniciado com a 
+  emissão do documento pelo fornecedor, contra o CNPJ da empresa. 
+  <br>
+  A partir deste ponto, o fluxo é composto pelas seguintes etapas:
+</p>
+<h3 class="doc-h3">2.1.1 Captura automática do XML</h3>
+<p>
+  O Cloud atualmente é responsável por realiza buscas periódicas (a cada 15 minutos) nos ambientes da SEFAZ (para notas de produto / material) e no Ambiente Nacional 
+  (para notas de serviço), identificando todos os XMLs emitidos contra o CNPJ do cliente. Os arquivos identificados são transferidos para o monitor de arquivos 
+  XML do RM (tela nativa do sistema) adaptada para receber os XMLs via Fórmula Visual.
+</p>
+<h3 class="doc-h3">2.1.2 Geração de metadados e visualização</h3>
+<p>
+  Imediatamente após a chegada, uma rotina automática extrai as principais informações do XML (número da nota, série, CNPJ e nome do fornecedor, data de emissão, natureza 
+  da operação, valor total, itens com NCM, quantidade e valor unitário) e as armazena em uma tabela de metadados, acessível por uma tela customizada. Essa etapa visa 
+  facilitar a consulta dos dados relevantes sem a necessidade de abrir o XML bruto.
+</p>
+<h3 class="doc-h3">2.1.3 Vinculação manual da nota ao pedido (Pré-Nota)</h3>
+<p>O XML chega ao monitor com o status <strong>inconsistente</strong>, pois ainda não há vínculo com nenhum pedido de compra. Para estabelecer esse vínculo, o operador da 
+  área de recebimento acessa a ordem de compra no RM, gera uma <strong>Pré-Nota</strong> e informa manualmente o número da nota fiscal que está sendo recebida. Essa é 
+  a <strong>única ação manual</strong> de todo o processo e é necessária porque:</p>
+<ul>
+  <li>Os fornecedores, em sua maioria, não preenchem a tag com o número do pedido no XML.</li>
+  <li>A sequência de itens na nota não costuma corresponder à sequência do pedido.</li>
+  <li>As descrições e códigos dos produtos não são padronizados entre fornecedor e cliente.</li>
+</ul>
+<p>Assim, o operador atua como um "double check", garantindo que a nota recebida corresponde exatamente ao que foi pedido – especialmente em casos de recebimento parcial, 
+  onde ele deve criar a pré-nota apenas com os itens efetivamente recebidos.</p>
+<p>É importante destacar que a pré-nota pode ser gerada <strong>antes mesmo</strong> do XML chegar ao monitor – se o operador já tiver a nota em mãos (via e-mail ou física),
+   ele pode cadastrá-la antecipadamente. Quando o XML chegar, o vínculo será feito automaticamente.</p>
+<h3 class="doc-h3">2.1.4 Vinculação automática e mudança de status</h3>
+<p>Após a criação da pré-nota, uma automação (fluxo que roda a cada 15 minutos) verifica se há correspondência entre o número da nota informado na pré-nota e os XMLs
+   presentes no monitor. Quando encontra a correspondência, ele preenche o campo "Ordem de Compra" no registro do XML e altera o status de <strong>inconsistente</strong> 
+   para <strong>pendente</strong> – sinalizando que a nota está apta para ser processada.</p>
+   <h3 class="doc-h3">2.1.5 Processamento automático e geração do recebimento</h3>
+<p>Com o status pendente, uma segunda automação (executada a cada 30 minutos) realiza o processamento da pré-nota. Esse processo equivale à ação manual de "faturar a receber" e gera automaticamente:</p>
+<ul>
+  <li>O movimento de entrada de mercadoria (estoque),</li>
+  <li>O lançamento contábil (débito e crédito),</li>
+  <li>O título a pagar para o fornecedor (também conhecido como "Contas a Pagar"(com as condições de pagamento definidas no pedido)).</li>
+</ul>
+<h3 class="doc-h3">2.1.6 Finalização e monitoramento</h3>
+<p>Após o processamento bem-sucedido, o XML é removido do monitor e o fluxo é concluído. Para garantir a rastreabilidade e a rápida identificação de problemas, a equipe mantém uma 
+  <strong>planilha de controle</strong> que consolida:</p>
+<ul>
+  <li>Notas que não foram recebidas e o motivo do erro (ex.: falta de parametrização contábil, CNPJ não cadastrado, divergência de valores);</li>
+  <li>Quantitativos diários e mensais de recebimentos por tipo de movimento;</li>
+  <li>Pré-notas pendentes aguardando XML;</li>
+  <li>Comparação entre informações do XML e do movimento gerado.</li>
+</ul>
+<p>Essa planilha permite que o time técnico atue proativamente na correção de falhas, enquanto a área operacional pode validar rapidamente se alguma nota não processada é legítima ou exige ajuste.</p>
+<h2 id="sec-2-2" class="doc-h2">2.2 Estrutura Organizacional e Papéis</h2>
+<p>O processo de entrada de Notas fiscais no GXML RM envolve três perfis de responsabilidade
+</p>
+<ul>
+  <li>
+    <strong>Operador da área de recebimento de NFe/NFS:</strong>
+    <p>
+      É o responsável por gerar a Pré-Nota a partir da Ordem de Compra, informando o número da nota fiscal que está sendo recebida. Essa é a única ação manual de todo o fluxo. O operador também deve 
+    conferir se os itens constantes na nota correspondem ao que foi efetivamente recebido (especialmente em casos de recebimento parcial) e, se necessário, ajustar a ordem dos itens quando há inversão 
+    de sequência (ex.: lote de produtos). Esse perfil atua diretamente no sistema RM, utilizando as telas nativas de faturar a receber e os metadados customizados.
+    </p>
+  </li>
+  <li><strong>Equipe de Suporte / Desenvolvimento WeeUp:</strong><br>
+  <p>
+    Responsável por manter a integração, monitorar os processos automáticos (automações para busca de XML e processamento), tratar erros de parametrização (contábil, fiscal) e ajustar a ferramenta 
+    conforme novas necessidades surgem (ex.: inclusão de frete, lote, etc.). Também atuam na análise de notas que ficam pendentes por inconsistências (CNPJ não cadastrado, falta de vínculo com pedido).
+  </p>
+</li>
+  <li><strong>Gestão de TI (Cliente):</strong><br>
+  <p>
+    Atua como elo entre a área de negócio (usuários) e a equipe técnica, ajudando a alinhar expectativas, priorizar correções e garantir que os ajustes necessários sejam feitos de forma estruturada.
+  </p>
+</li>
+</ul>
+
+<h2 id="sec-2-3" class="doc-h2">2.3 Fluxo Detalhado — Cenário Atual (AS IS)</h2>
+<p>Adicionar fluxograma e texto explicativo (se houver necessidade)</p>
+
+
+
+
+
+
+
+
+
+
+<h2 id="sec-2-4" class="doc-h2">2.4 Problemas e Dores Identificadas</h2>
+<div class="tbl-wrap">
+<table>
+<tr>
+  <th>Categoria</th>
+  <th>Situação identificada</th>
+</tr>
+
+<tr>
+  <td class="rid-cell">Herança de parametrização do ERP</td>
+  <td>
+    Foram identificadas inconsistências pré-existentes na parametrização dos movimentos do RM, como divergências em valor líquido, cálculo de impostos e frete. Essas configurações já estavam presentes antes da integração e passaram a ficar mais evidentes durante a utilização da automação, sendo, em alguns momentos, associadas ao funcionamento da ferramenta.
+  </td>
+</tr>
+
+<tr>
+  <td class="rid-cell">Requisitos levantados durante a execução</td>
+  <td>
+    Alguns requisitos, como controle de lote e tratamento do valor de frete, foram identificados ao longo da implantação e não estavam contemplados no levantamento inicial. Isso demandou a implementação de ajustes em produção, reduzindo o tempo disponível para planejamento e validação.
+    Em alguns momentos, esse cenário se repetiu, resultando no desenvolvimento de funcionalidades antes da consolidação do processo de negócio, evidenciando uma oportunidade de fortalecer a etapa de levantamento e validação de requisitos.
+  </td>
+</tr>
+
+<tr>
+  <td class="rid-cell">Dependência de Ação Manual</td>
+  <td>
+    A única ação manual – inserir o número da nota na pré-nota – permanece <strong>necessária</strong> devido a características do processo de origem:
+    <ul>
+      <li>Fornecedores não preenchem o número do pedido no XML;</li>
+      <li>A sequência dos itens na nota nem sempre corresponde à do pedido;</li>
+      <li>Descrições e códigos de produtos não seguem um padrão único.</li>
+    </ul>
+    Dessa forma, essa etapa atua como uma validação adicional, contribuindo para reduzir o risco de recebimentos incorretos.
+  </td>
+</tr>
+
+<tr>
+  <td class="rid-cell">Adoção e aderência dos usuários</td>
+  <td>
+    Após as primeiras dificuldades encontradas durante a implantação — principalmente relacionadas às parametrizações existentes no ERP e à identificação de novos requisitos — observou-se uma redução na confiança dos usuários em relação à ferramenta.
+    Como consequência, sua utilização acaba sendo limitada em determinados momentos, dificultando a validação das melhorias implementadas e aumentando a necessidade de novos ciclos de treinamento e acompanhamento pela equipe técnica da WeeUp / WeePulse.
+  </td>
+</tr>
+
+<tr>
+  <td class="rid-cell">Padronização e documentação da arquitetura</td>
+  <td>
+    Ao longo do projeto, diversas evoluções e adequações foram incorporadas conforme novas necessidades surgiam durante a implantação. Em alguns casos, essas demandas ainda não estavam respaldadas por processos de negócio formalmente definidos, tornando a evolução da solução mais reativa e aumentando a necessidade de ajustes durante sua implementação.
+    Como oportunidade de melhoria, recomenda-se fortalecer a documentação da arquitetura, a definição dos processos e o alinhamento dos requisitos antes da implementação de novas funcionalidades.
+  </td>
+</tr>
+
+<tr>
+  <td class="rid-cell">Disponibilização de relatórios</td>
+  <td>
+    Atualmente, os relatórios do produto são disponibilizados ao cliente por meio de planilhas. Como oportunidade de evolução, recomenda-se a disponibilização dessas informações diretamente na plataforma, proporcionando uma experiência mais integrada, maior autonomia aos usuários e um posicionamento mais alinhado às expectativas de uma solução de mercado.
+  </td>
+</tr>
+
+<tr>
+  <td class="rid-cell">Cliente piloto</td>
+  <td>
+    O GXML RM encontra-se atualmente implantado apenas no cliente piloto <strong>Santa Casa Catalão</strong>. Durante a implantação, observou-se que alguns processos de negócio ainda estavam em fase de consolidação, o que exigiu adaptações frequentes na solução ao longo do projeto. A adoção da ferramenta em novos clientes, com processos mais consolidados e alinhamento prévio das regras de negócio, tende a ampliar a validação do produto, contribuir para sua evolução e favorecer a construção de funcionalidades mais padronizadas.
+  </td>
+</tr>
+
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+<h2 id="sec-2-5" class="doc-h2">2.5 Análise do Cenário Atual e Considerações</h2>
+<p>
+  O cenário atual do Gestão XML RM revela um produto que, do ponto de vista técnico, já cumpre seu papel com relativa eficiência: a busca, o vínculo (via número da nota) e o processamento automático (atualmente automação assistida, ou seja, que depende de uma ou mais ação manual) da entrada fiscal estão funcionando. As automações de integração operam em intervalos regulares e a planilha de controle oferece boa visibilidade dos erros e pendências.
+
+No entanto, a maturidade operacional e de governança ainda é baixa. As dores mais significativas não são técnicas, mas comportamentais e de gestão de projeto:
+</p>
+<ul>
+  <li>O cliente não engajou na fase de validação, o que gerou um acúmulo de correções emergenciais.</li>
+  <li>A parametrização do RM já estava comprometida antes da integração segundo relatos do time técnico. Com a implementação do GXML RM, as falhas da parametrização ficaram mais explicitas, que passaram a ser vistas como erro / falha do GXML </li>
+  <li> Cultura da área operacional é resistente à mudança, preferindo o recebimento manual mesmo quando a ferramenta já oferece soluções (ex.: inclusão de lote já está corrigido, mas os usuários não testam).</li>
+  <li>A falta de padronização dos fornecedores (ausência de número de pedido, sequência de itens inconsistente, descrições divergentes) inviabiliza uma automação total, exigindo um ponto de verificação humana – o que é visto como um "gargalo", mas na verdade é uma proteção necessária.</li>
+</ul>
+<p>Em suma, o AS IS mostra um <strong>processo funcional, mas imaturo</strong>, com grande dependência de pessoas-chave e com um histórico de desgaste (de ambos) que prejudica a credibilidade da solução. O desafio atual é <strong>reconstruir a confiança e alinhar a parametrização de base para que a automação gere valor real</strong>, em vez de apenas reproduzir erros existentes. <br></p>
+
+<h1 id="sec-3" class="doc-h1">3. TO BE — Evolução GXML RM</h1>
+<h2 id="sec-3-1" class="doc-h2">3.1 Visão Geral do Processo Futuro</h2>
+<p>.</p>
+<h2 id="sec-3-2" class="doc-h2">3.2 Atualização de Processo</h2>
+<h2 id="sec-3-3" class="doc-h2">3.3 Novas Features</h2>
+<h2 id="sec-3-4" class="doc-h2">3.4 Diagrama do Fluxo Futuro (TO BE)</h2>
+<div class="diagram">
+<div class="cap"> .</div>
+</div>
+<h2 id="sec-3-5" class="doc-h2">3.5 Ajustes Importantes no Processo</h2>
+<!-- <h3 id="rot-2" class="doc-h3 h-func">Cotação</h3>
+<div class="func-body">
+<p>A rotina de Cotação será utilizada para centralizar e registrar o processo de negociação com fornecedores.</p>
+<div class="dblock"><div class="dblock-h">Principais características</div>
+</div>
+<div class="dblock"><div class="dblock-h">Aspectos técnicos</div>
+<ul>
+<li>Integração com Solicitação de Compras</li>
+<li>Geração automática de mapa comparativo</li>
+<li>Histórico de negociações</li>
+<li>Controle de fornecedores participantes</li>
+</ul>
+</div>
+<div class="callout"><div class="callout-h">Observação</div>Para compras específicas do Agro, onde não exista cotação formal ou fornecedor recorrente, será permitido processo simplificado com justificativa registrada.</div>
+</div>
+
+<h3 id="rot-3" class="doc-h3 h-func">Pedido de Compra</h3>
+<div class="func-body">
+<p>Após definição da compra, o Pedido de Compra será gerado diretamente no sistema Protheus.</p>
+<div class="dblock"><div class="dblock-h">Principais características</div>
+<ul>
+<li>Formalização da compra no ERP</li>
+<li>Registro das condições negociadas</li>
+<li>Controle de quantidade, valores, condições de pagamento e prazo de entrega</li>
+<li>Vinculação com solicitação e cotação</li>
+</ul>
+</div>
+<div class="dblock"><div class="dblock-h">Aspectos técnicos</div>
+<ul>
+<li>Rotina padrão de Pedido de Compra</li>
+<li>Integração com Estoque, Fiscal e Financeiro</li>
+<li>Controle de saldo do pedido</li>
+<li>Rastreabilidade completa do processo</li>
+</ul>
+</div>
+</div>
+
+<h3 id="rot-4" class="doc-h3 h-func">Alçadas de Aprovação de Compras</h3>
+<div class="func-body">
+<p>O processo de aprovação ocorrerá através de workflow eletrônico conforme políticas corporativas.</p>
+<div class="dblock"><div class="dblock-h">Principais características</div>
+<ul>
+<li>Aprovação diretamente no sistema</li>
+<li>Controle por níveis hierárquicos</li>
+<li>Aprovação baseada em valor da compra, tipo de aquisição e centro de custo</li>
+<li>Registro de histórico das aprovações</li>
+</ul>
+</div>
+<div class="dblock"><div class="dblock-h">Aspectos técnicos</div>
+<ul>
+<li>Workflow nativo do Protheus</li>
+<li>Parametrização de múltiplos níveis</li>
+<li>Controle de usuários aprovadores</li>
+<li>Registro de data e responsável pela aprovação</li>
+</ul>
+</div>
+<div class="callout"><div class="callout-h">Observação</div>O modelo poderá prever flexibilização para compras emergenciais do Agro, mantendo obrigatoriedade de rastreabilidade e posterior validação.</div>
+</div>
+
+<h3 id="rot-5" class="doc-h3 h-func">Conferência Física</h3>
+<div class="func-body">
+<p>O recebimento dos materiais será realizado com conferência física vinculada ao processo sistêmico.</p>
+<div class="dblock"><div class="dblock-h">Principais características</div>
+<ul>
+<li>Validação entre pedido de compra, material recebido e nota fiscal</li>
+<li>Controle de divergências</li>
+<li>Recebimento parcial ou total</li>
+<li>Atualização automática do estoque</li>
+</ul>
+</div>
+<div class="dblock"><div class="dblock-h">Aspectos técnicos</div>
+<ul>
+<li>Integração entre Compras e Estoque</li>
+<li>Movimentação automática de entrada</li>
+<li>Controle de saldo pendente do pedido</li>
+<li>Histórico de recebimento</li>
+</ul>
+</div>
+</div>
+
+<h3 id="rot-6" class="doc-h3 h-func">Nota Fiscal de Entrada</h3>
+<div class="func-body">
+<p>A entrada da nota fiscal será realizada diretamente no Protheus, preferencialmente através de importação XML.</p>
+<div class="dblock"><div class="dblock-h">Principais características</div>
+<ul>
+<li>Importação automatizada do XML</li>
+<li>Vínculo com pedido de compra</li>
+<li>Redução de lançamentos manuais</li>
+<li>Integração com estoque e financeiro</li>
+<li>Validação fiscal e tributária</li>
+</ul>
+</div>
+<div class="dblock"><div class="dblock-h">Aspectos técnicos</div>
+<ul>
+<li>Rotina de Documento de Entrada</li>
+<li>Integração com Compras, Estoque, Fiscal, Financeiro e Contábil</li>
+<li>Geração automática de títulos financeiros</li>
+<li>Escrituração fiscal integrada</li>
+</ul>
+</div>
+</div> -->
+
+<h2 id="sec-3-10" class="doc-h2">3.6 Principais Ganhos</h2>
+<!-- <div class="tbl-wrap"><table>
+<tr><th>Frente</th><th>Ganhos esperados</th></tr>
+<tr><td class="rid-cell">Operacionais</td><td>Redução de urgência e retrabalho; redução de controles paralelos; padronização do processo administrativo; maior agilidade na formalização das compras.</td></tr>
+<tr><td class="rid-cell">Sistêmicos</td><td>Integração total; automação; utilização dos recursos nativos do Protheus; integração entre compras, estoque, fiscal e financeiro.</td></tr>
+<tr><td class="rid-cell">Governança</td><td>Rastreabilidade e controle das decisões; controle por alçadas de aprovação; histórico completo das operações.</td></tr>
+<tr><td class="rid-cell">Controle</td><td>Gestão de estoque integrada; redução de compras emergenciais; maior visibilidade gerencial do processo.</td></tr>
+</table></div> -->
+<h2 id="sec-3-11" class="doc-h2">3.7 Considerações Finais (TO BE)</h2>
+<!-- <p>O modelo TO BE atende tanto o cenário Agro quanto o Corporativo, criando um processo único com flexibilidade controlada.</p>
+<p>O Protheus será o sistema central, garantindo padronização sem comprometer a operação.</p> -->
+
+<!-- <h1 id="sec-4" class="doc-h1">4. Assinaturas de Aprovação</h1>
+<p>Ao assinar abaixo, os responsáveis confirmam que analisaram e aprovam o mapeamento de processos descrito neste documento, autorizando o avanço para as próximas etapas do projeto.</p>
+<div class="tbl-wrap"><table>
+<tr><th>Papel</th><th>Nome / Área</th><th>Assinatura / Data</th></tr>
+<tr><td>Gestor do Projeto</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Analista Responsável</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Cliente / Key User</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table></div>
+<div class="footnote">Confidencial – uso interno · Documento gerado em 31/03/2026 · Versão 1.0</div>
+  </main>
+</div> -->
+<button id="totop" aria-label="Voltar ao topo">&#8593;</button>
+</body>
+</html>
