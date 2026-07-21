@@ -39,3 +39,12 @@
   },{rootMargin:'-56px 0px -75% 0px'});
   spy.forEach(function(h){obs.observe(h);});
 })();
+document.querySelectorAll(".images").forEach(img => {
+
+    img.addEventListener("click", () => {
+
+        window.open(img.src, "_blank");
+
+    });
+
+});
