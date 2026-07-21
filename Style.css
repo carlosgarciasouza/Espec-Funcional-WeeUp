@@ -268,7 +268,7 @@ h2.doc-h2 {
   padding-left: 12px;
   border-left: 5px solid var(--verde);
 }
-h3.doc-h3 {
+.doc-h3 {
   font-size: 16.5px;
   margin: 26px 0 10px;
   color: var(--azul);
@@ -458,6 +458,113 @@ td.rid-cell {
 #totop:hover {
   transform: translateY(-2px);
 }
+/* ==========================================================
+   IMAGENS
+   ========================================================== */
+
+.image-card{
+    margin:28px auto 36px;
+    background:#fff;
+    border:1px solid var(--borda);
+    border-radius:14px;
+    overflow:hidden;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.06);
+
+    transition:.25s;
+}
+
+.image-card:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.12);
+}
+
+.images{
+
+    display:block;
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:auto;
+
+    height:auto;
+
+    object-fit:contain;
+
+    background:#fafafa;
+
+    cursor:zoom-in;
+}
+
+.image-card figcaption{
+
+    padding:14px 18px;
+
+    background:#fbfbfd;
+
+    border-top:1px solid var(--borda);
+
+    font-size:13px;
+
+    color:var(--cinza);
+
+    text-align:center;
+
+    font-style:italic;
+}
+/* ==========================================================
+
+   BPMN
+
+   ========================================================== */
+.bpmn-card{
+
+    margin:40px 0;
+
+    background:white;
+
+    border-radius:14px;
+
+    border:1px solid var(--borda);
+
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.bpmn{
+
+    display:block;
+
+    width:100%;
+
+    padding:20px;
+
+    background:#fafafa;
+}
+
+.bpmn-card figcaption{
+
+    background:var(--azul-claro);
+
+    padding:14px;
+
+    text-align:center;
+
+    color:var(--azul);
+
+    font-weight:600;
+
+}
+
+
+
 /* ==========================================================
 
    11. RESPONSIVIDADE
